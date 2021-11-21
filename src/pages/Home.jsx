@@ -32,7 +32,6 @@ const Home = (props) => {
     showEvents(user.received_events_url, setEvents)
   }, [user]);
 
-  console.log(events)
 
   if(loading) {
     return (

@@ -14,7 +14,6 @@ import style from "./SearchedUser.module.css"
 const SearchedUser = ({user, error}) => {
   const [repos, setRepos] = useState([]);
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true)
  
   useEffect (() => {
     showRepos(user.repos_url, setRepos)

@@ -5,7 +5,6 @@ export const getUser = (link) => {
     headers: {
       "Content-Type": 'application/json',
       "Accept": 'application/json',
-
       "Authorization": 'Token' + token  
     }
   })).then(response => response.json())

@@ -1,10 +1,6 @@
-.divForRepos {
-  width: 80%;
-  height: 70px;
-  border: 1px solid black;
+.repos {
+  margin: 10px;
   border-radius: 15px;
-  text-align: center;
-  line-height: 70px;
   -webkit-box-shadow: 5px 4px 7px 2px rgba(0,0,0,0.37); 
   box-shadow: 5px 4px 7px 2px rgba(0,0,0,0.37);
 } 

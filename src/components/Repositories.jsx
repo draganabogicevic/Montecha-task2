@@ -1,18 +1,18 @@
 import React, { Fragment } from "react";
 
-import { Col, Row } from "react-bootstrap"
+import RepoCard from "./RepoCard.jsx";
 
-import style from "./Repositories.module.css"
+import { Col, Row } from "react-bootstrap"
 
 const Repositorise = ({repos}) => {
   
   return (
     <Fragment>
       <h1 className="mb-3 mt-4 text-center">Repositories</h1>
-      <Row>
+      <Row className="g-4">
         {repos.map(repo =>(
           <Col lg={6} className="d-flex justify-content-center" key={repo.id}>
-            <div className={`m-2 ${style.divForRepos}`} key={repo.id}>{repo.name}</div>
+            <RepoCard repo={repo}/>
           </Col>
         ))}
       </Row>

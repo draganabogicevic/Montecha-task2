@@ -43,8 +43,6 @@ function App() {
     setSearchText(filteredText);
   }
 
- 
-  console.log(user)
   return (
     <ErrorBoundary>
       <Header />
