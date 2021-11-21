@@ -9,3 +9,5 @@ There are three main pages: the home page, the search page, and the page that di
 Home page displays my GitHub profile. 
 
 For this app, besides React and JavaScript, I have used the bootstrap-react framework.
+
+It can be oppened with following link https://modest-raman-ec68e2.netlify.app/
