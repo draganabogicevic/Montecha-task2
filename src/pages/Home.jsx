@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 import Repositorise from "../components/Repositories";
 import Events from "../components/Events";
 import ErrorDisplay from "../components/ErrorDisplay";
+import { showRepos, showEvents } from "../service/service";
 
 import Communicator from "../service/Communicator";
 
 import { Col, Row, Container, Image, Spinner } from "react-bootstrap";
+import { PersonFill } from "react-bootstrap-icons"
 
 
 const Home = (props) => {
@@ -25,24 +27,12 @@ const Home = (props) => {
     })   
   }, []);
  
-  
-  const showRepos = () => {
-    fetch(user.repos_url)
-    .then (respons => respons.json())
-    .then(data => setRepos(data))
-  }
-
-  const showEvents = () => {
-    fetch(user.received_events_url)
-    .then (respons => respons.json())
-    .then(data => setEvents(data))
-  }
-  
-
   useEffect (() => {
-    showRepos()
-    showEvents()
+    showRepos(user.repos_url, setRepos)
+    showEvents(user.received_events_url, setEvents)
   }, [user]);
+
+  console.log(events)
 
   if(loading) {
     return (
@@ -59,13 +49,21 @@ const Home = (props) => {
   return (
     <Container fluid>
       <Row>
-        <Col lg={5}>
-          <Image className="img-fluid" src={user.avatar_url} alt="img" roundedCircle/>
+        <Col lg={3} sm={6}>
+          <Image className="img-fluid mt-5" src={user.avatar_url} alt="img" roundedCircle/>
+          <h1 className="mt-4">{user.name}</h1>
+            <h3>{user.login}</h3>
+            <div className="mt-4">
+              <p className="m-0 p-0"><PersonFill size="1.5rem"/> Followers: {user.followers}</p>
+              <p className="m-0 p-0"><PersonFill size="1.5rem"/> Following: {user.following}</p>
+            </div>
         </Col>
-        <Col lg={3}>
+        <Col lg={8} sm={6} className="offset-lg-1">
           <Repositorise repos={repos} />
         </Col>
-        <Col lg={3}>
+      </Row>
+      <Row>
+        <Col className="mb-5">
           <Events events={events} />
         </Col>
       </Row>

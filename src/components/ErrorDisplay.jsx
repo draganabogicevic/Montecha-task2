@@ -11,7 +11,7 @@ export default function ErrorDisplay(props) {
         <h2 className="display-5">{msg}</h2>
         {props.children}
       </div>
-      <Link className="d-flex justify-content-center pb-5" to="/">Go Home</Link>
+      <Link className="d-flex justify-content-center pb-5" to="/search">Give it another try!</Link>
     </Fragment>
   );
 }

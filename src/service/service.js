@@ -15,4 +15,22 @@ export const getUser = (link) => {
   })
 }
 
+export const showRepos = (reposUrl, f) => {
+  fetch(reposUrl)
+  .then (respons => respons.json())
+  .then(data => f(data))
+  .catch((error) => {
+    console.log(error);
+  })
+}
+
+export const showEvents = (eventsUrl, f) => {
+  fetch(eventsUrl)
+  .then (respons => respons.json())
+  .then(data => f(data))
+  .catch((error) => {
+    console.log(error);
+  })
+}
+
 

@@ -1,15 +1,6 @@
-export const includesIgnoreCase = (stringToSearch, queryString) => {
-  if (queryString.length === 0) return true;
-  queryString = (queryString.trim());
-  let queries = queryString.split(/\s+/);
-
-  for (let i = 0; i < queries.length; i++) {
-    if (i === queries.length - 1) queries[i] = new RegExp("\\b" + queries[i], "i");
-    else queries[i] = new RegExp("\\b" + queries[i] + "\\b", "i");
-  }
-  for (let i = 0; i < queries.length; i++) {
-    if (!stringToSearch.match(queries[i])) return false;
-  }
-
-  return true;
-};
+export const formatDate = (dateString) => {
+  const year = dateString.slice(0,4);
+  const month = dateString.slice(5,7);
+  const day = dateString.slice(8,10); 
+  return (`${day}.${month}.${year}`)
+}

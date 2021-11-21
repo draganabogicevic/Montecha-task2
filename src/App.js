@@ -22,6 +22,10 @@ function App() {
   const [ error, setError ] = useState("");
 
   const searchUser = () => {
+    if(searchText === "") {
+      setUser("");
+      setError("Please add user name")
+    }
     getUser(links.USERS_LINK + searchText)
     .then(response => {
       console.log(response)
@@ -30,6 +34,7 @@ function App() {
       } else {
         setUser(new User(response));
         setError(null);
+        setSearchText("");
     }
   })
   }

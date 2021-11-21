@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className={`bg-dark text-light ${style.footer}`}>
       <Container>
-        <p className="text-center p-4">Copyright &copy; GitHub 2021.</p>
+        <p className="text-center">Copyright &copy; GitHub 2021.</p>
       </Container>
     </footer>  
   )
